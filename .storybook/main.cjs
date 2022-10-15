@@ -14,7 +14,11 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  async viteFinal(config) {
+  async viteFinal(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      config.base = '/Ignite-Lab-Design-System/'
+    }
+
     return mergeConfig(config, {
       resolve: (await import('../vite.config.js')).default.resolve,
       optimizeDeps: {
