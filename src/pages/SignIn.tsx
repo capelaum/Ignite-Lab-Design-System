@@ -1,8 +1,8 @@
-import { Checkbox } from '@radix-ui/react-checkbox'
 import axios from 'axios'
 import { Envelope, Lock } from 'phosphor-react'
 import { FormEvent, useState } from 'react'
 import { Button } from '../components/Button'
+import { Checkbox } from '../components/Checkbox'
 import { Heading } from '../components/Heading'
 import { Logo } from '../components/Logo'
 import { Text } from '../components/Text'
@@ -77,7 +77,10 @@ export function SignIn() {
 
         <label htmlFor="remember" className="flex items-center gap-2">
           <Checkbox id="remember" />
-          <Text size="sm" className="text-gray-200">
+          <Text
+            size="sm"
+            className="text-gray-200 hover:text-gray-100 hover:cursor-pointer"
+          >
             Lembrar de mim por 30 dias
           </Text>
         </label>
