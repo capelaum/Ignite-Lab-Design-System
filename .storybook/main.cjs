@@ -16,6 +16,7 @@ module.exports = {
     storyStoreV7: true,
     interactionsDebugger: true,
   },
+  staticDirs: ['../public'],
   async viteFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
       config.base = '/Ignite-Lab-Design-System/'

@@ -1,4 +1,5 @@
 import { Checkbox } from '@radix-ui/react-checkbox'
+import axios from 'axios'
 import { Envelope, Lock } from 'phosphor-react'
 import { FormEvent, useState } from 'react'
 import { Button } from '../components/Button'
@@ -10,8 +11,13 @@ import { TextInput } from '../components/TextInput'
 export function SignIn() {
   const [isUserSignedIn, setIsUserSignedIn] = useState(false)
 
-  function handleSignIn(event: FormEvent<HTMLFormElement>) {
+  async function handleSignIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+
+    await axios.post('/sessions', {
+      email: 'luis@email.com',
+      password: '12345678',
+    })
 
     setIsUserSignedIn(true)
   }
